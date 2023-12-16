@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #E9F1FA;
+    font-family: Arial, sans-serif;
+}
+
+#player {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#volume {
+    width: 100px;
+}

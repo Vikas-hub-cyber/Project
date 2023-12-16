@@ -2,33 +2,7 @@
 <html>
 
 <head>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #E9F1FA;
-            font-family: Arial, sans-serif;
-        }
-
-        #player {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-        }
-
-        #controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        #volume {
-            width: 100px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -39,42 +13,7 @@
     </div>
 
     <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '390',
-                width: '640',
-                videoId: 'mtoIb-zZA5s',
-                events: {
-                    'onReady': onPlayerReady,
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            var playButton = document.getElementById("playButton");
-            playButton.addEventListener("click", function () {
-                if (player.getPlayerState() === YT.PlayerState.PLAYING) {
-                    player.pauseVideo();
-                    playButton.innerText = "Play";
-                } else {
-                    player.playVideo();
-                    playButton.innerText = "Pause";
-                }
-            });
-
-            var volumeSlider = document.getElementById("volume");
-            volumeSlider.addEventListener("input", function () {
-                player.setVolume(volumeSlider.value);
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
